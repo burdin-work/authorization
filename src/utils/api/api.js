@@ -1,6 +1,5 @@
 import * as axios from "axios";
 
-const hardText = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxM…E4Nn0.prH8wRN5NeAnArdA8r9Dc4Q_Q9lah8Go9UZh8j6N5_A';
 export const tokenNames = {
     access_token: 'id14293_access_token',
     refresh_token: 'id14293_refresh_token'
@@ -89,11 +88,13 @@ export const me = async (setIsAuth, setCompleted) => {
                 localStorage.setItem(tokenNames.access_token, response.data.body.access_token);
                 localStorage.setItem(tokenNames.refresh_token, response.data.body.refresh_token);
 
+                const access_token = localStorage.getItem(tokenNames.access_token);
                 response = await authAPI.me(access_token);
                 if (response.status === 200 && response.data.body.message === 'token is valid') {
                     setIsAuth(true);
                     setCompleted(true);
                 } else {
+                    console.log(response)
                     setIsAuth(false);
                     setCompleted(true);
                 }
