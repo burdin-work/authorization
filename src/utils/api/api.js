@@ -41,7 +41,6 @@ export const login = async (email, psw, setIsAuth, setError) => {
         if (response.status === 200) {
 
             if (!response.data.body.message && response.data.body.access_token) {
-                console.log(response);
                 localStorage.setItem(tokenNames.access_token, response.data.body.access_token);
                 localStorage.setItem(tokenNames.refresh_token, response.data.body.refresh_token);
                 setIsAuth(true);
@@ -92,22 +91,18 @@ export const me = async (setIsAuth, setCompleted) => {
 
                 response = await authAPI.me(access_token);
                 if (response.status === 200 && response.data.body.message === 'token is valid') {
-                    console.log(' -- access_token is valid -- ', response);
                     setIsAuth(true);
                     setCompleted(true);
                 } else {
-                    console.log(' -- access_token is NOT valid -- ', response);
                     setIsAuth(false);
                     setCompleted(true);
                 }
 
             } else {
-                console.log(' -- response.status !== 200');
                 setIsAuth(false);
                 setCompleted(true);
             }
         } else {
-            console.log(' -- refresh_token is undefined');
             setIsAuth(false);
             setCompleted(true);
         }
@@ -117,7 +112,6 @@ export const me = async (setIsAuth, setCompleted) => {
     if (access_token) {
         response = await authAPI.me(access_token);
         if (response.status === 200 && response.data.body.message === 'token is valid') {
-            console.log('-- token is valid --', response);
             setIsAuth(true);
             setCompleted(true);
         } else {
