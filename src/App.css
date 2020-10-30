@@ -1,0 +1,83 @@
+
+h1 {
+  text-align: center;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding-top: 100px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+.wrapLinkToReg {
+  text-align: end;
+  color: #365892;
+  font-size: 14px;
+}
+
+.linkToReg {
+  user-select: none;
+  cursor: pointer;
+}
+.linkToReg:hover {
+  border-bottom: 1px solid #365892;
+}
+.linkToReg:active {
+  border-bottom: none;
+  cursor: none;
+}
+
+.profileInfo {
+  padding-bottom: 70px;
+}
+
+.error {
+  text-align: center;
+  color: red;
+  background-color: rgba(0,0,255,0.15);
+  border-radius: 5px;
+  padding: 8px 5px;
+  margin: 5px 0;
+}
+
+.storageWrap {
+  text-align: right;
+  padding: 15px 40px;
+}
+
+.clearStorage {
+  color: #365892;
+  cursor: pointer;
+  user-select: none;
+}
+
+.clearStorage:hover {
+  color: red;
+}
+.clearStorage:active {
+  color: #111;
+}
